@@ -304,7 +304,7 @@ val skikoVersion = "0.9.17"
 
 Which will include all compose libraries for every single OS to officially make it a universal JAR. Since you are creating separate zips for each OS, you can technically still split these, but I though this was easier.
 
-This is going to check if it's universal JAR build and include them, else it will just add them for your current OS.
+This is going to check if it's a universal JAR build and include them, else it will just add them for your current OS.
 
 **Don't change the task names. If you do, be sure to adjust the `isFatJarBuild` function.**
 
