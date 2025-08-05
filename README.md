@@ -26,6 +26,8 @@ import java.util.zip.GZIPInputStream
 First add this to your `build.gradle.kts` file outside any other scope.
 
 ```
+//the jar name
+val projectName = "YourProjectName"
 val graalVersion = "21.0.2"
 val baseUrl = "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-$graalVersion"
 
@@ -198,8 +200,6 @@ Next you are going to add this task to package the universal JAR:
 ```
 tasks.register<Jar>("packageFatJar") {
     
-    val projectName = "YourProjectName"
-    
     group = "custom jar"
     description = "Builds a fat JAR."
     archiveBaseName.set(projectName)
@@ -311,8 +311,6 @@ Now finally you are going to add the task:
 ```
 tasks.register("packageJARDistributables") {
 
-    val projectName = "YourProjectName"
-
     group = "custom jar"
     description = "Creates a distributable folder for each OS with bundled JDK and launch scripts."
 
@@ -408,8 +406,6 @@ If you want to build the jar and run it, you can also add this task:
 
 ```
 tasks.register("runFatJar") {
-    
-    val projectName = "YourProjectName"
     
     group = "custom jar"
     description = "Builds and runs the fat JAR."
