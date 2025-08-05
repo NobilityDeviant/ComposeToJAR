@@ -59,7 +59,6 @@ dependencies {
     }
 
     implementation(compose.material3)
-    implementation("org.apache.commons:commons-compress:1.26.1")
 }
 
 compose.desktop {
