@@ -225,7 +225,7 @@ tasks.register<Jar>("packageFatJar") {
     //sourceSets["main"].java.srcDir("build/generated/source/kapt/main")
     //you can also include kapt as well or any other tasks
     //dependsOn("kaptKotlin")
-    //this will include all the jars and configurations
+    //this will include all the dependencies and configurations
     dependsOn(configurations.runtimeClasspath)
 
     //change to your own sourceSets name
@@ -276,7 +276,7 @@ fun isFatJarBuild(): Boolean {
 }
 ```
 
-Then inside of your `dependecies` block, you are going to add this:
+Then inside of your `dependencies` block, you are going to add this:
 
 ```
 //... other dependencies... ie: implementation(compose.material3)
