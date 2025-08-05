@@ -448,3 +448,5 @@ Everything will be created inside your projects `build` folder.
 That's it! I won't provide much other details, but I will fix any issues.
 
 I hope this has helped you. 
+
+You can see the [https://github.com/NobilityDeviant/ComposeToJAR/blob/main/build.gradle.kts](https://github.com/NobilityDeviant/ComposeToJAR/blob/main/build.gradle.kts) for a fuller example.
