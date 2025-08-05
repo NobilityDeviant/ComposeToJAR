@@ -191,7 +191,7 @@ tasks.register("downloadJdks") {
 }
 ```
 
-This task is going to download each individual JDK, debloat it as much as possible and create a folder with it's respective name.
+This task is going to download each individual JDK, debloat it as much as possible, and create a folder with it's respective name.
 
 This is a one time task as it checks if the JDKs exist later on.
 
@@ -264,7 +264,7 @@ tasks.register<Jar>("packageFatJar") {
 
 **Note that your `project.version` is `version = "0.0.1"` inside your `build.gradle.kts`**
 
-Now inside `build.gradle.kts` add this function outside of any scope:
+Now inside `build.gradle.kts`, add this function outside of any scope:
 
 ```
 fun isFatJarBuild(): Boolean {
@@ -300,13 +300,13 @@ val skikoVersion = "0.9.17"
     }
 ```
 
-Which will include all compose libraries for every single os to officially make it a universal JAR. Since you are creating separate zips for each OS, you can technically still split these, but I though this was easier.
+Which will include all compose libraries for every single OS to officially make it a universal JAR. Since you are creating separate zips for each OS, you can technically still split these, but I though this was easier.
 
-This is going to check if it's universal or fat JAR build and include them, else it will just add them for your current OS and is crucial.
+This is going to check if it's universal JAR build and include them, else it will just add them for your current OS.
 
 **Don't change the task names. If you do, be sure to adjust the `isFatJarBuild` function.**
 
-Now finally you are going to add the task:
+Now you are going to add the task:
 
 ```
 tasks.register("packageJARDistributables") {
@@ -394,15 +394,15 @@ tasks.register("packageJARDistributables") {
 }
 ```
 
-This task will package everything inside of their respective packages which will include `.bat` or `.sh` scripts for easy running.
+This task will package everything inside of their respective packages which will include `.bat` or `.sh` scripts for easy launching.
 
 Since this task is placing your universal JAR inside the `app` folder, the scripts are written to use it. You can change this if you know what you're doing.
 
-Now inside your gradle tasks, look for the group labeled `custom jar`, open it and run `packageJARDistributables` which will package everything all together.
+Now inside your gradle tasks (elephant in intellij), look for the group labeled `custom jar`, open it and run `packageJARDistributables` which will package everything all together.
 
 You can also only create the JAR if you please with `packageFatJar`.
 
-If you want to build the jar and run it, you can also add this task:
+If you want to build the jar and run it, you can add this task:
 
 ```
 tasks.register("runFatJar") {
