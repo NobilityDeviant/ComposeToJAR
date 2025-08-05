@@ -181,7 +181,7 @@ tasks.register("downloadJdks") {
 }
 ```
 
-This task is going to download each inidivual JDK, debloat it as much as possible and create a folder with it's respective name.
+This task is going to download each individual JDK, debloat it as much as possible and create a folder with it's respective name.
 
 This is a one time task as it checks if the JDKs exist later on.
 
