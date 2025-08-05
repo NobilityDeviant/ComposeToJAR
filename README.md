@@ -1,4 +1,5 @@
 # ComposeToJAR
+
 Easy to use Gradle Kotlin DSL code to transform your Desktop Compose app into a universal JAR.
 
 I was struggling with creating native distributables for Jetpack Compose on every single OS.
@@ -12,6 +13,15 @@ This isn't a complete guide on everything, but it should help you get started.
 **Every single gradle task is going to be under the group ``custom jar``**
 
 Inside of your main modules `build.gradle.kts`, you are going to create a new task to automate this process for you.
+
+Before you start, add these imports to the top of your `build.gradle.kts`
+
+```
+import org.jetbrains.kotlin.org.apache.commons.compress.archivers.tar.TarArchiveInputStream
+import java.net.HttpURLConnection
+import java.net.URI
+import java.util.zip.GZIPInputStream
+```
 
 First add this to your `build.gradle.kts` file outside any other scope.
 
@@ -268,12 +278,6 @@ fun isFatJarBuild(): Boolean {
 
 Then inside of your `dependecies` block, you are going to add this:
 
-`implementation("org.apache.commons:commons-compress:1.26.1")`
-
-This library is needed for zipping since gradle doesn't do the best job.
-
-and
-
 ```
 //... other dependencies... ie: implementation(compose.material3)
 //should be the latest. im not entirely sure if it should match your current compose version.
@@ -440,18 +444,6 @@ Everything will be created inside your projects `build` folder.
 
 `project-folder > build > distributions`
 
-The imports if needed:
-
-```
-import org.jetbrains.kotlin.org.apache.commons.compress.archivers.tar.TarArchiveInputStream
-import java.net.HttpURLConnection
-import java.net.URI
-import java.util.zip.GZIPInputStream
-```
-
-`import org.jetbrains.kotlin.org.apache.commons.compress.archivers.tar.TarArchiveInputStream` 
-
-won't resolve until you sync.
 
 That's it! I won't provide much other details, but I will fix any issues.
 
