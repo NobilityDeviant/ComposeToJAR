@@ -73,6 +73,7 @@ interface InjectedExecOps {
     val execOps: ExecOperations
 }
 
+val projectName = "YourProjectName"
 val graalVersion = "21.0.2"
 val baseUrl = "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-$graalVersion"
 
@@ -228,8 +229,6 @@ tasks.register("downloadJdks") {
 
 tasks.register("packageJARDistributables") {
 
-    val projectName = "YourProjectName"
-
     group = "custom jar"
     description = "Creates a distributable folder for each OS with bundled JDK and launch scripts."
 
@@ -315,8 +314,6 @@ tasks.register("packageJARDistributables") {
 
 tasks.register<Jar>("packageFatJar") {
 
-    val projectName = "YourProjectName"
-
     group = "custom jar"
     description = "Builds a fat JAR."
     archiveBaseName.set(projectName)
@@ -371,8 +368,6 @@ tasks.register<Jar>("packageFatJar") {
 }
 
 tasks.register("runFatJar") {
-
-    val projectName = "YourProjectName"
 
     group = "custom jar"
     description = "Builds and runs the fat JAR."
