@@ -1,5 +1,7 @@
 # ComposeToJAR
 
+Successfully used for [ZenDownloader](https://github.com/NobilityDeviant/ZenDownloader). An anime & cartoon downloader made in kotlin & compose.
+
 Easy to use Gradle Kotlin DSL code to transform your Desktop Compose app into a universal JAR.
 
 I was struggling with creating native distributables for Jetpack Compose on every single OS.
