@@ -259,7 +259,7 @@ tasks.register("packageJARDistributables") {
 
             val distDir = File(
                 distRoot,
-                "ZenDownloader-${graalJDK.folderName}"
+                "$projectName-${graalJDK.folderName}"
             )
             distDir.deleteRecursively()
             distDir.mkdirs()
