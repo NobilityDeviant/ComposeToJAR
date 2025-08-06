@@ -205,7 +205,6 @@ tasks.register<Jar>("packageFatJar") {
     group = "custom jar"
     description = "Builds a fat JAR."
     archiveBaseName.set(projectName)
-    //archiveClassifier.set("all") if you want to append the jar name
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     destinationDirectory.set(layout.buildDirectory.dir("custom-jars"))
 
@@ -343,7 +342,7 @@ tasks.register("packageJARDistributables") {
 
             val distDir = File(
                 distRoot,
-                "ZenDownloader-${graalJDK.folderName}"
+                "$projectName-${graalJDK.folderName}"
             )
             distDir.deleteRecursively()
             distDir.mkdirs()
