@@ -48,9 +48,6 @@ dependencies {
     )
 
     if (isFatJarBuild()) {
-        allObjectBoxLibs.forEach {
-            implementation(it)
-        }
         allSkikoLibs.forEach {
             implementation(it)
         }
